@@ -23,11 +23,11 @@ self.loginTrainer = function() {
     data: ko.toJS(new TrainerClass({ email: this.newTrainerLEmail(), password:  this.newTrainerLPass()})),
     success: function(data) {
       document.getElementById('spin').style.display='none';
-     window.location.pathname = "index.html";
+     window.location.pathname = "Home.html";
     },
     error: function (error) {
       document.getElementById('spin').style.display='none';
-    alert('INvalid Email or Password');
+    alert('Invalid Email or Password');
 }
 })
 

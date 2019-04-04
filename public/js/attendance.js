@@ -41,7 +41,7 @@ self.attendance = function() {
         //console.log(response);
         for(var i=0;i<response.total;i++){
            // alert(response.CURRENT_DAY_BOOKINGS[i].email);
-            $("#tab tbody").append("<tr> <td>"+(i+1)+" </td> <td class='em'>"+response.CURRENT_DAY_BOOKINGS[i].email+" </td><td> <button class='attend'>yes</button></td></tr>");
+            $("#tab tbody").append("<tr> <td>"+(i+1)+" </td> <td class='em'>"+response.CURRENT_DAY_BOOKINGS[i].email+" </td><td> <button onClick='this.disabled=true;' class='attend mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent mdl-color--orange-900'>Attended</button></td></tr>");
           }
 
           $("#myModal").modal('show');
@@ -85,12 +85,12 @@ self.sendtip = function() {
       
     data: ko.toJS(new TrainerClass({ type: this.newTrainertype(), health_tip:  this.newTrainertip()})),
     success: function(data) {
-      alert("sent", data); //the new item is returned with an ID
+      alert("Health tip sent successfully", data); //the new item is returned with an ID
       window.history.go(0);
     }
 })};
 $('#showw').click(function (){
-alert("he");
+
 
   console.log('saved');
   $.ajax({
